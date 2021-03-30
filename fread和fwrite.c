@@ -1,60 +1,59 @@
 #include<stdio.h>
 
-//struct Stu
-//{
-//	char name[20];
-//	int age;
-//	float score;
-//};
-//int main()
-//{
-//	struct Stu s = { "ÕÅÈı",20,66.5f };
-//	FILE*pf=fopen("test.txt", "wb");
-//	//wb ÊÇ¶ş½øÖÆµÄ¡°Ö»Ğ´¡±
-//	//ÒÔ¶ş½øÖÆĞÎÊ½Ğ´Èë
-//	if (pf == NULL)
-//	{
-//		perror("open file for writting");
-//		return 1;
-//	}
-//	//Ğ´ÎÄ¼ş
-//	fwrite(&s, sizeof(s), 1, pf);
-//	//²ÎÊı:Êı¾İµÄµØÖ·£¬Ã¿¸öÀàĞÍµÄ´óĞ¡£¬¼¸¸ö£¬´æµ½ÄÄ
-//
-//	//¹Ø±ÕÎÄ¼ş
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+struct Stu
+{
+ 	char name[20];
+	int age;
+	float score;
+};
+int main()
+{
+	struct Stu s = { "å¼ ä¸‰",20,66.5f };
+	FILE*pf=fopen("test.txt", "wb");
+	//wb æ˜¯äºŒè¿›åˆ¶çš„â€œåªå†™â€
+	//ä»¥äºŒè¿›åˆ¶å½¢å¼å†™å…¥
+	if (pf == NULL)
+	{
+		perror("open file for writting");
+		return 1;
+	}
+//	//å†™æ–‡ä»¶
+	fwrite(&s, sizeof(s), 1, pf);
+	//å‚æ•°:æ•°æ®çš„åœ°å€ï¼Œæ¯ä¸ªç±»å‹çš„å¤§å°ï¼Œå‡ ä¸ªï¼Œå­˜åˆ°å“ª
+
+	//å…³é—­æ–‡ä»¶
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
 
 
-//struct Stu
-//{
-//	char name[20];
-//	int age;
-//	float score;
-//};
-//int main()
-//{
-//	struct Stu s = { 0 };
-//	FILE* pf = fopen("test.txt", "rb");
-//	//wb ÊÇ¶ş½øÖÆµÄ¡°Ö»¶Á¡±
-//	//¶ÁÈ¡¶ş½øÖÆÊı¾İ
-//	if (pf == NULL)
-//	{
-//		perror("open file for writting");
-//		return 1;
-//	}
-//	//¶ÁÎÄ¼ş
-//	fread(&s, sizeof(s), 1, pf);
-//	//²ÎÊı:´æµ½ÄÄ£¬Ã¿¸öÀàĞÍµÄ´óĞ¡£¬¼¸¸ö£¬´ÓÄÄÈ¡
-//	printf("%s %d %f", s.name, s.age, s.score);
-//
-//	//¹Ø±ÕÎÄ¼ş
-//	fclose(pf);
-//	pf = NULL;
-//	return 0;
-//}
+struct Stu
+{
+	char name[20];
+	int age;
+	float score;
+};
+int main()
+{
+	struct Stu s = { 0 };
+	FILE* pf = fopen("test.txt", "rb");
+	//wb æ˜¯äºŒè¿›åˆ¶çš„â€œåªè¯»â€
+	//è¯»å–äºŒè¿›åˆ¶æ•°æ®
+	if (pf == NULL)
+	{
+		perror("open file for writting");
+		return 1;
+	}
+ 	//è¯»æ–‡ä»¶
+	fread(&s, sizeof(s), 1, pf);
+	//å‚æ•°:å­˜åˆ°å“ªï¼Œæ¯ä¸ªç±»å‹çš„å¤§å°ï¼Œå‡ ä¸ªï¼Œä»å“ªå–
+	printf("%s %d %f", s.name, s.age, s.score);
+//	//å…³é—­æ–‡ä»¶
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
 
 
-//¸¡µãÊıºÜÄÑÔÚÄÚ´æÖĞ¾«È·µÄ±£´æ
+//æµ®ç‚¹æ•°å¾ˆéš¾åœ¨å†…å­˜ä¸­ç²¾ç¡®çš„ä¿å­˜
